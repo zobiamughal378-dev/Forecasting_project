@@ -1,0 +1,201 @@
+{
+  "n_obs": 526,
+  "start": "1958-03-01",
+  "end": "2001-12-01",
+  "n_missing_weekly": 59,
+  "y_min": 313.4,
+  "y_max": 373.79999999999995,
+  "y_mean": 339.619194935649,
+  "H": 24,
+  "H_future": 36,
+  "trend_gain_ppm": 56.23232568701553,
+  "seasonal_amp_ppm": 6.707878269633866,
+  "seasonal_strength": 0.9843822981501221,
+  "trend_strength": 0.9997756099246485,
+  "stationarity": [
+    {
+      "Series": "Raw series",
+      "ADF_stat": 2.234,
+      "ADF_p": 0.9989,
+      "KPSS_stat": 3.3694,
+      "KPSS_p": 0.01,
+      "Verdict": "Non-stationary"
+    },
+    {
+      "Series": "First difference (d=1)",
+      "ADF_stat": -4.7529,
+      "ADF_p": 0.0001,
+      "KPSS_stat": 0.3,
+      "KPSS_p": 0.1,
+      "Verdict": "Stationary"
+    },
+    {
+      "Series": "Seasonal difference (D=1, s=12)",
+      "ADF_stat": -4.2909,
+      "ADF_p": 0.0005,
+      "KPSS_stat": 1.1829,
+      "KPSS_p": 0.01,
+      "Verdict": "Non-stationary"
+    },
+    {
+      "Series": "d=1 and D=1 (s=12)",
+      "ADF_stat": -8.4006,
+      "ADF_p": 0.0,
+      "KPSS_stat": 0.0204,
+      "KPSS_p": 0.1,
+      "Verdict": "Stationary"
+    }
+  ],
+  "grid_size": 36,
+  "best_order": [
+    0,
+    1,
+    1
+  ],
+  "best_seasonal": [
+    1,
+    1,
+    1,
+    12
+  ],
+  "best_aic": 207.66107863919441,
+  "grid_top5": [
+    {
+      "spec": "SARIMA(0, 1, 1)x(1, 1, 1, 12)",
+      "AIC": 207.66107863919441,
+      "BIC": 224.31433785533298
+    },
+    {
+      "spec": "SARIMA(1, 1, 1)x(1, 1, 1, 12)",
+      "AIC": 208.15538979442843,
+      "BIC": 228.97196381460162
+    },
+    {
+      "spec": "SARIMA(0, 1, 2)x(1, 1, 1, 12)",
+      "AIC": 209.1066723687102,
+      "BIC": 229.9127089771856
+    },
+    {
+      "spec": "SARIMA(2, 1, 1)x(1, 1, 1, 12)",
+      "AIC": 211.56042337568465,
+      "BIC": 236.5403121998925
+    },
+    {
+      "spec": "SARIMA(1, 1, 2)x(1, 1, 1, 12)",
+      "AIC": 211.76743688878332,
+      "BIC": 236.7346808189538
+    }
+  ],
+  "sarima_holdout": {
+    "MAE": 0.35661745064636347,
+    "RMSE": 0.4305522358341466,
+    "MAPE": 0.09619178643407016
+  },
+  "ci95_coverage": 1.0,
+  "ci95_mean_width": 2.766211208748814,
+  "seasonal_naive_holdout": {
+    "MAE": 1.8822916666666576,
+    "RMSE": 2.0664893237081996,
+    "MAPE": 0.5084497077942033
+  },
+  "ljung_box_p": 0.6323798380115115,
+  "jarque_bera_p": 0.003134928127749443,
+  "resid_std": 0.3132596250263996,
+  "sarima_coefs": [
+    {
+      "term": "ma.L1",
+      "coef": -0.3536,
+      "se": 0.0415,
+      "p": 0.0
+    },
+    {
+      "term": "ar.S.L12",
+      "coef": -0.0008,
+      "se": 0.0005,
+      "p": 0.0679
+    },
+    {
+      "term": "ma.S.L12",
+      "coef": -0.8524,
+      "se": 0.029,
+      "p": 0.0
+    },
+    {
+      "term": "sigma2",
+      "coef": 0.0868,
+      "se": 0.0057,
+      "p": 0.0
+    }
+  ],
+  "future_first": 371.9718536586044,
+  "future_last": 375.7030403714528,
+  "future_last_lo": 373.12514390651546,
+  "future_last_hi": 378.28093683639014,
+  "future_last_date": "2004-12-01",
+  "future_first_date": "2002-01-01",
+  "gbm_holdout_1step": {
+    "MAE": 0.29712907139628203,
+    "RMSE": 0.3941894612060423,
+    "MAPE": 0.08009843811728566
+  },
+  "sarima_holdout_1step": {
+    "MAE": 0.20979119013058542,
+    "RMSE": 0.2724355504140606,
+    "MAPE": 0.05659210225860876
+  },
+  "seasonal_naive_1step": {
+    "MAE": 1.3143749999999959,
+    "RMSE": 1.3740113870221966,
+    "MAPE": 0.35512071261487205
+  },
+  "shap_importance": [
+    {
+      "feature": "sdiff_lag1",
+      "mean_abs_shap": 0.34971,
+      "share_pct": 48.97812
+    },
+    {
+      "feature": "sdiff_roll6",
+      "mean_abs_shap": 0.10898,
+      "share_pct": 15.26278
+    },
+    {
+      "feature": "sdiff_lag12",
+      "mean_abs_shap": 0.09381,
+      "share_pct": 13.13805
+    },
+    {
+      "feature": "sdiff_lag2",
+      "mean_abs_shap": 0.0787,
+      "share_pct": 11.0218
+    },
+    {
+      "feature": "sdiff_lag3",
+      "mean_abs_shap": 0.04042,
+      "share_pct": 5.66111
+    },
+    {
+      "feature": "mom_change_lag1",
+      "mean_abs_shap": 0.02864,
+      "share_pct": 4.01139
+    },
+    {
+      "feature": "month_sin",
+      "mean_abs_shap": 0.00867,
+      "share_pct": 1.21393
+    },
+    {
+      "feature": "month_cos",
+      "mean_abs_shap": 0.00509,
+      "share_pct": 0.71281
+    }
+  ],
+  "gbm_gini_top": {
+    "sdiff_lag1": 0.6484,
+    "sdiff_lag2": 0.0993,
+    "sdiff_lag12": 0.0843
+  },
+  "waterfall_date": "2001-12-01",
+  "waterfall_base": 1.3055281773362226,
+  "waterfall_pred": 1.4210420597359124
+}
